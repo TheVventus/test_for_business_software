@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'San Francisco(SF UI)';
+    src: local('San Francisco(SF UI) Display Bold'), local('San-Francisco(SF-UI)-Display-Bold'),
+        url('./fonts/SFUIDisplay-Bold.woff2') format('woff2'),
+        url('./fonts/SFUIDisplay-Bold.woff') format('woff'),
+        url('./fonts/SFUIDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
+.container {
+    margin: 20px auto;
+    width: 360px;
+    height: 730px;
+    background-color: #FAFAFA;
+    position: relative;
+}
+.header {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.prevArrow {
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 11px 8px 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+.header_caption {
+    font-family: SF UI Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+    text-align: center;
+    margin-left: calc(50% - 70px);
+}
+
+.top_information {
+    height: 160px;
+    padding: 28px 15px;
+    margin: 10px 10px 0;
+    background: linear-gradient(179.62deg, #D8E4EA 0.75%, #FAFAFA 99.34%), linear-gradient(90deg, #536976 0%, #292E49 100%);
+    border-radius: 40px 40px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.client {
+    display: flex;
+    justify-content: space-between;
+}
+.client_right {
+    margin-left: 10px;
+    padding: 5px;
+    font-family: SF UI Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+.logo_alfa {
+    margin-right: 17px;
+}
+
+.pay_form {
+    background-color: #fff;
+    border-radius: 20px;
+    height: 145px;
+    margin: 10px 10px 0;
+    padding: 30px;
+}
