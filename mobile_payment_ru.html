@@ -6,7 +6,6 @@
     <script type="text/javascript" src="../../js/jquery.payment_new.js"></script>
     <link rel="stylesheet" href="./css/reset.css"/>
     <link rel="stylesheet" href="./css/style.css"/>
-    <link href="fonts/style.css" rel="stylesheet" type="text/css"/>
     <script>
         $(document).payment({
             language: "ru",
@@ -34,7 +33,7 @@
                         <img src="./img/office.png">
                     </div>
                     <div class="client_right">
-                        <div id="amount">120,00 Р</div>
+                        <div id="amount">120,00 ₽</div>
                         <div id="orderNumber">№1442_164</div>
                         <div id="description">SO_GURMAN</div>
                     </div>
@@ -43,41 +42,26 @@
                     <img src="/img/alfabank.png">
                 </div>
             </div>
-            <form class="pay_form" name="PaymentForm" action="#" method="post" id="formPayment">
+            <form class="form" name="PaymentForm" action="#" method="post" id="formPayment">
                 <input type="hidden" id="expiry">
                 <input type="hidden" id="mdOrder">
                 <input type="hidden" id="location" value="/../">
                 <input type="hidden" id="language" value="<locale>">
-                <input name="$PAN" id="iPAN" maxlength="19" type="text" autocomplete="off" />
-                <select name="MM" id="month">
-                    <option value="01" selected> 1 - январь</option>
-                    <option value="02"> 2 - февраль</option>
-                    <option value="03"> 3 - март</option>
-                    <option value="04"> 4 - апрель</option>
-                    <option value="05"> 5 - май</option>
-                    <option value="06"> 6 - июнь</option>
-                    <option value="07"> 7 - июль</option>
-                    <option value="08"> 8 - август</option>
-                    <option value="09"> 9 - сентябрь</option>
-                    <option value="10">10 - октябрь</option>
-                    <option value="11">11 - ноябрь</option>
-                    <option value="12">12 - декабрь</option>
-                </select>
-                <select name="YYYY" id="year">
-                    <option value='2012' selected>2012</option>
-                    <option value='2013'>2013</option>
-                    <option value='2014'>2014</option>
-                    <option value='2015'>2015</option>
-                    <option value='2016'>2016</option>
-                    <option value='2017'>2017</option>
-                    <option value='2018'>2018</option>
-                    <option value='2019'>2019</option>
-                    <option value='2020'>2020</option>
-                    <option value='2021'>2021</option>
-                    <option value='2022'>2022</option>
-                </select>
-                <input name="TEXT" id="iTEXT" maxlength="90" type="text" autocomplete="off" />
-                <input name="$CVC" id="iCVC" maxlength="3" type="password" autocomplete="off" />
+                <div class="form_group">
+                    <input class="form_input" placeholder=" " name="$PAN" id="iPAN" maxlength="19" type="text" autocomplete="off" />
+                    <label for="iPAN" class="form_label">Номер карты</label>
+                </div>
+                <div class="col-two">
+                    <div class="form_group col6">
+                        <input class="form_input" placeholder=" " name="YearMonth" id="YearMonth">
+                        <label for="YearMonth" class="form_label">Месяц/Год</label>
+                    </div>
+                    <div class="form_group col6">
+                        <input class="form_input" placeholder=" " name="$CVC" id="iCVC" maxlength="3" type="password" autocomplete="off" />
+                        <label for="iCVC" class="form_label">CVV/CVC</label>
+                        <i class="icon"></i>
+                    </div>
+                </div>
                 <input value="Оплатить" type="button" id="buttonPayment">
             </form> 
             <form id="acs" method="post" action="">
@@ -85,6 +69,8 @@
                 <input type="hidden" id="PaReq" name="PaReq"/>
                 <input type="hidden" id="TermUrl" name="TermUrl"/>
             </form>
+            <div class="checkbox">
+            </div>
             <div id="errorBlock" style="color:red;"></div>
             <div id="numberCountdown"></div>
             <div id="infoBlock"></div>
