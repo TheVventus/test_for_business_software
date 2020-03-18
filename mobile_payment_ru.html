@@ -1,11 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
-    <script type="text/javascript" src="../../js/jquery-1.8.1.min.js"></script>
-    <script type="text/javascript" src="../../js/jquery.timers-1.2.js"></script>
-    <script type="text/javascript" src="../../js/jquery.url.js"></script>
-    <script type="text/javascript" src="../../js/jquery.payment_new.js"></script>
     <link rel="stylesheet" href="./css/reset.css"/>
     <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./fonts/style.css"/>
+    <script type="text/javascript" src="./js/lib/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="./js/lib/jquery.timers.js"></script>
+    <script type="text/javascript" src="./js/lib/js-url-2.6.3/src/url.js"></script>
+    <script type="text/javascript" src="./js/lib/jquery.payment-master/lib/jquery.payment.js"></script>
+    <script async src="./js/main.js"></script>
     <script>
         $(document).payment({
             language: "ru",
@@ -27,52 +29,60 @@
             <h1 class="header_caption">Оплата</h1>
         </header>
         <main class="main">
-            <div class="top_information">
-                <div class="client">
-                    <div class="client_left">
-                        <img src="./img/office.png">
+            <div class="card">
+                <div class="top_information">
+                    <div class="client">
+                        <div class="client_left">
+                            <img src="./img/office.png">
+                        </div>
+                        <div class="client_right">
+                            <div class="amount" id="amount">120,<span>00 ₽</span></div>
+                            <div id="orderNumber">№1442_164</div>
+                            <div id="description">SO_GURMAN</div>
+                        </div>
                     </div>
-                    <div class="client_right">
-                        <div id="amount">120,00 ₽</div>
-                        <div id="orderNumber">№1442_164</div>
-                        <div id="description">SO_GURMAN</div>
+                    <div class="logo_alfa">
+                        <img src="/img/alfabank.png">
                     </div>
                 </div>
-                <div class="logo_alfa">
-                    <img src="/img/alfabank.png">
-                </div>
+                <form class="form" name="PaymentForm" action="#" method="post" id="formPayment">
+                    <input type="hidden" id="expiry">
+                    <input type="hidden" id="mdOrder">
+                    <input type="hidden" id="location" value="/../">
+                    <input type="hidden" id="language" value="<locale>">
+                    <div class="form_group">
+                        <input class="form_input" placeholder=" " name="$PAN" id="iPAN" maxlength="19" type="text" autocomplete="off" />
+                        <label for="iPAN" class="form_label">Номер карты</label>
+                    </div>
+                    <div class="col-two">
+                        <div class="form_group col6">
+                            <input class="form_input" placeholder=" " name="YearMonth" id="YearMonth">
+                            <label for="YearMonth" class="form_label">Месяц/Год</label>
+                        </div>
+                        <div class="form_group col6">
+                            <input class="form_input" placeholder=" " name="$CVC" id="iCVC" maxlength="3" type="password" autocomplete="off" />
+                            <label for="iCVC" class="form_label">CVV/CVC</label>
+                            <i class="icon"></i>
+                        </div>
+                    </div>
+                </form> 
+                <form id="acs" method="post" action="">
+                    <input type="hidden" id="MD" name="MD"/>
+                    <input type="hidden" id="PaReq" name="PaReq"/>
+                    <input type="hidden" id="TermUrl" name="TermUrl"/>
+                </form>
             </div>
-            <form class="form" name="PaymentForm" action="#" method="post" id="formPayment">
-                <input type="hidden" id="expiry">
-                <input type="hidden" id="mdOrder">
-                <input type="hidden" id="location" value="/../">
-                <input type="hidden" id="language" value="<locale>">
-                <div class="form_group">
-                    <input class="form_input" placeholder=" " name="$PAN" id="iPAN" maxlength="19" type="text" autocomplete="off" />
-                    <label for="iPAN" class="form_label">Номер карты</label>
-                </div>
-                <div class="col-two">
-                    <div class="form_group col6">
-                        <input class="form_input" placeholder=" " name="YearMonth" id="YearMonth">
-                        <label for="YearMonth" class="form_label">Месяц/Год</label>
-                    </div>
-                    <div class="form_group col6">
-                        <input class="form_input" placeholder=" " name="$CVC" id="iCVC" maxlength="3" type="password" autocomplete="off" />
-                        <label for="iCVC" class="form_label">CVV/CVC</label>
-                        <i class="icon"></i>
-                    </div>
-                </div>
-                <input value="Оплатить" type="button" id="buttonPayment">
-            </form> 
-            <form id="acs" method="post" action="">
-                <input type="hidden" id="MD" name="MD"/>
-                <input type="hidden" id="PaReq" name="PaReq"/>
-                <input type="hidden" id="TermUrl" name="TermUrl"/>
-            </form>
             <div class="checkbox">
+                <input class="save" id="save-card" type="checkbox">
+                <label for="save-card">Запомнить эту кару</label>
+            </div>
+            <div class="btn-container">
+                <input class="btn-pay" value="Оплатить" type="button" id="buttonPayment">
             </div>
             <div id="errorBlock" style="color:red;"></div>
-            <div id="numberCountdown"></div>
+            <div class="countdown" id="numberCountdown">
+                <span>До окончании сессии 19:38</span>
+            </div>
             <div id="infoBlock"></div>
             <div id="indicator" style="display:none;"><img src="../../img/ajax-loader.gif" height="19" width="220" alt="indicator"></div>
         </main>

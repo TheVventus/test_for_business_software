@@ -1,11 +1,4 @@
-@font-face {
-    font-family: 'San Francisco(SF UI)';
-    src: local('San Francisco(SF UI) Display Bold'), local('San-Francisco(SF-UI)-Display-Bold'),
-        url('./fonts/SFUIDisplay-Bold.woff2') format('woff2'),
-        url('./fonts/SFUIDisplay-Bold.woff') format('woff'),
-        url('./fonts/SFUIDisplay-Bold.ttf') format('truetype');
-    font-weight: 700;
-  }
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 html{
     box-sizing: border-box;
 }
@@ -35,7 +28,7 @@ html{
     cursor: pointer;
 }
 .header_caption {
-    font-family: SF UI Display;
+    font-family: SF UI Display Bold;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -43,6 +36,9 @@ html{
     color: #333333;
     text-align: center;
     margin-left: calc(50% - 70px);
+}
+.card {
+    min-height: 245px;
 }
 .top_information {
     min-height: 160px;
@@ -59,13 +55,25 @@ html{
     justify-content: space-between;
 }
 .client_right {
-    margin-left: 10px;
-    padding: 5px;
-    font-family: SF UI Display;
+    margin-left: 15px;
+    font-family: SF UI Display Light;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 14px;
+}
+.amount {
+    font-family: SF UI Display Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+}
+.amount span {
+    opacity: 0.5;
+}
+.client_right div {
+    padding: 1px 0;
 }
 .logo_alfa {
     margin-right: 17px;
@@ -74,22 +82,21 @@ html{
 .form {
     background-color: #fff;
     border-radius: 15px;
-    height: 145px;
     margin: 10px 15px 0;
-    padding: 39px 11px;
+    padding: 34px 12px 23px;
     position: absolute;
     top: 135px;
     left: 0;
 }
 .form_group {
     position: relative;
-    margin-bottom: 28px;
     display: flex;
 }
 .col-two {
     display: flex;
     justify-content: space-between;
-    padding: 0px 40px 0px 0px;
+    margin-top: 31px;
+    padding-right: 32px;
 }
 .col6 {
     width: 33%;
@@ -107,7 +114,7 @@ html{
     top: 0;
     transition: 0.3s;
     cursor: text;
-    font-family: SF UI Display;
+    font-family: SF UI Display Light;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -128,5 +135,67 @@ html{
     width: 20px;
     height: 20px;
     top: 0;
-    right: -30px;
+    right: -26px;
+}
+.checkbox {
+    margin: 8px 18px;
+    padding: 0 10px;
+}
+.checkbox input[type="checkbox"] {
+    display: none;
+}
+.checkbox input[type="checkbox"] + label {
+    display: block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+}
+.checkbox input[type="checkbox"] + label:before {
+    content: "\2714";
+    display:  inline-block;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    padding: 1px 3.5px 4px;
+    margin-right: 11px;
+    vertical-align: middle;
+    color: transparent;
+}
+.checkbox input[type="checkbox"]:checked + label:before {
+    color: #333;
+}
+.btn-container {
+    margin: 35px 0 45px;
+}
+.btn-pay {
+    margin: 0 auto;
+    position: relative;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    border-radius: 66px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 40px;
+    width: 148px;
+    background-color: #EF5350;
+    font-family: SF UI Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+.countdown {
+    text-align: center;
+    color: #999999;
+    font-family: SF UI Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
 }
