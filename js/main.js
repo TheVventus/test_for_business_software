@@ -1,4 +1,10 @@
 $(function($){
+    function isErrorCVC (input) {
+        let error = Math.random();
+        if (error > 0.5) {
+            $(input).css('border-color','#EE2A23');
+        }
+    }
     $('.cc-number').payment('formatCardNumber');
     $('.cc-exp').payment('formatCardExpiry');
     $('.cc-cvc').payment('formatCardCVC');
@@ -13,13 +19,9 @@ $(function($){
     $('.btn-pay').on('click', function() {
         $('.btn-pay').css('opacity','0.6');
     });
-    /*
-    $('.close').on('click',function() {
-        console.log('asd');
-        $('.hint').css('display','none');
-        $('.tip').removeClass('close');
-    });
-    */
+
+    isErrorCVC($('.form-cvc'));
+
 });
 
 

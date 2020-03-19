@@ -11,15 +11,14 @@
     <script type="text/javascript" src="./js/lib/js-url-2.6.3/src/url.js"></script>
     <script type="text/javascript" src="./js/lib/jquery.payment-master/lib/jquery.payment.js"></script>
     <script async src="./js/main.js"></script>
-    <script>
-        $(document).payment({
-            language: "ru",
-            messageAjaxError: "Сервис временно недоступен. Попробуйте позднее.",
-            messageTimeRemaining: "До окончания сессии осталось #MIN#:#SEC#",
-            visualValidationEnabled: false,
-            agreementCheckboxEnabled: false,
-            bindingCheckboxEnabled: true,
-            getFeeEnabled:false
+
+    <script type="text/javascript">
+        $(document).payment_binding({
+            visualValidationEnabled: true
+        });
+        $(document).ready(function () {
+            $(document).payment_binding("validate");
+            $(document).payment_binding("showError", "");
         });
     </script>
     <title>Оплата</title>
@@ -49,44 +48,34 @@
                         <img src="/img/alfabank.png">
                     </div>
                 </div>
-                <form name="PaymentForm" action="#" method="post" id="formPayment">
+                <form class="bindingForm" action="" method="post" id="bindingPaymentForm">
                     <div class="form">
                         <input type="hidden" id="expiry">
                         <input type="hidden" id="mdOrder">
                         <input type="hidden" id="location" value="/../">
                         <input type="hidden" id="language" value="<locale>">
-                        <div class="form_group">
-                            <input class="form_input cc-number" placeholder=" " name="$PAN" id="iPAN" maxlength="19" type="text" autocomplete="off" />
-                            <label for="iPAN" class="form_label">Номер карты</label>
-                        </div>
-                        <div class="col-two">
-                            <div class="form_group col6">
-                                <input class="form_input cc-exp" placeholder=" " name="ccExp" id="ccExp">
-                                <label for="ccExp" class="form_label cc-exp">Месяц/Год</label>
+                        <h2 class="your-card">Ваша карта</h2>
+                        <div class="binding-col-two">
+                            <div class="maskedPan" id="maskedPan">
+                                <span>**** 4862</span>
                             </div>
-                            <div class="form_group col6">
-                                <input class="form_input cc-cvc" placeholder=" " 
-                                name="$CVC" id="iCVC" maxlength="3" type="password" autocomplete="off" />
-                                <label for="iCVC" class="form_label">CVV/CVC</label>
-                                <i class="tip"></i>
-                                <div class="hint">
+                            <div class="form_group">
+                                <input placeholder="CVV2/CVC2" class="form-cvc cc-cvc" name="$CVC" id="cvc" maxlength="3" type="password" autocomplete="off" />
+                                <i class="tip fixPos"></i>
+                                <div class="hint hintFix">
                                     <span class="hint-text">3 последние цифры на обратной стороне карты</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="checkbox">
-                        <input class="save" id="save-card" type="checkbox">
-                        <label for="save-card">Запомнить эту кару</label>
-                    </div>
-                    <div class="btn-container">
-                        <input class="btn-pay" value="Оплатить" type="button" id="buttonPayment">
+                    <div class="btn-container mTopFix">
+                        <input class="btn-pay" value="Оплатить" type="button" id="sendPayment">
                     </div>
                 </form> 
                 <form id="acs" method="post" action="">
-                    <input type="hidden" id="MD" name="MD"/>
-                    <input type="hidden" id="PaReq" name="PaReq"/>
-                    <input type="hidden" id="TermUrl" name="TermUrl"/>
+                    <input type="hidden" id="md" name="MD"/>
+                    <input type="hidden" id="paReq" name="PaReq"/>
+                    <input type="hidden" id="termUrl" name="TermUrl"/>
                 </form>
             </div>
             <div id="errorBlock" style="color:red;"></div>

@@ -30,7 +30,6 @@ html{
 .header_caption {
     font-family: SF UI Display Bold;
     font-style: normal;
-    font-weight: bold;
     font-size: 16px;
     line-height: 19px;
     color: #333333;
@@ -65,7 +64,6 @@ html{
 .amount {
     font-family: SF UI Display Bold;
     font-style: normal;
-    font-weight: bold;
     font-size: 16px;
     line-height: 19px;
 }
@@ -87,6 +85,7 @@ html{
     position: absolute;
     top: 135px;
     left: 0;
+    width: 330px;
 }
 .form_group {
     position: relative;
@@ -211,7 +210,7 @@ html{
     height: 40px;
     width: 148px;
     background-color: #EF5350;
-    font-family: SF UI Display;
+    font-family: SF UI Display Light;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -226,4 +225,69 @@ html{
     font-weight: normal;
     font-size: 12px;
     line-height: 14px;
+}
+
+
+
+/** Payment binding */
+.bindingForm {
+    color: #E5E5E5;
+}
+.your-card {
+    font-family: SF UI Display Bold;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+.binding-col-two {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    padding-right: 40px;
+    align-items: center;
+}
+.maskedPan {
+    margin-right: 0px;
+}
+.maskedPan span {
+    font-family: SF UI Display Thin;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing : 0.3em;
+    word-spacing: 3px;
+}
+.form-cvc {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border: 1px solid #BEBEBE;
+    border-radius: 6px;
+    width: 120px;
+    height: 36px;
+    padding: 0 15px 0 21px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 10px;
+}
+.form-cvc::-webkit-input-placeholder { 
+    font-family: SF UI Display Light;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #BEBEBE;
+    opacity: 0.6;
+    letter-spacing: 0;
+}
+.fixPos:after {
+    top: 10px;
+    right: -37px;
+}
+.mTopFix {
+    margin-top: 20px;
+}
+.hintFix {
+    color: #222222;
 }
