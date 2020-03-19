@@ -1,6 +1,4 @@
 # Test work
-
-- Payment Page [here](https://thevventus.github.io/mobile_payment_ru/);
-- Binding Page [here](https://thevventus.github.io/payment_binding_ru/);
-- Error Page [here](https://thevventus.github.io/mobile_errors_ru/);
-
+- Payment Page [here](https://thevventus.github.io/test_for_business_software/mobile_payment_.html);
+- Binding Page [here](https://thevventus.github.io/test_for_business_software/payment_binding_ru.html);
+- Error Page [here](https://thevventus.github.io/test_for_business_software/mobile_errors_ru.html);
