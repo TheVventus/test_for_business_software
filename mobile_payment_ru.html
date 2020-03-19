@@ -45,25 +45,38 @@
                         <img src="/img/alfabank.png">
                     </div>
                 </div>
-                <form class="form" name="PaymentForm" action="#" method="post" id="formPayment">
-                    <input type="hidden" id="expiry">
-                    <input type="hidden" id="mdOrder">
-                    <input type="hidden" id="location" value="/../">
-                    <input type="hidden" id="language" value="<locale>">
-                    <div class="form_group">
-                        <input class="form_input" placeholder=" " name="$PAN" id="iPAN" maxlength="19" type="text" autocomplete="off" />
-                        <label for="iPAN" class="form_label">Номер карты</label>
+                <form name="PaymentForm" action="#" method="post" id="formPayment">
+                    <div class="form">
+                        <input type="hidden" id="expiry">
+                        <input type="hidden" id="mdOrder">
+                        <input type="hidden" id="location" value="/../">
+                        <input type="hidden" id="language" value="<locale>">
+                        <div class="form_group">
+                            <input class="form_input cc-number" placeholder=" " name="$PAN" id="iPAN" maxlength="19" type="text" autocomplete="off" />
+                            <label for="iPAN" class="form_label">Номер карты</label>
+                        </div>
+                        <div class="col-two">
+                            <div class="form_group col6">
+                                <input class="form_input cc-exp" placeholder=" " name="ccExp" id="ccExp">
+                                <label for="ccExp" class="form_label cc-exp">Месяц/Год</label>
+                            </div>
+                            <div class="form_group col6">
+                                <input class="form_input" placeholder=" " 
+                                name="$CVC" id="iCVC" maxlength="3" type="password" autocomplete="off" />
+                                <label for="iCVC" class="form_label cc-cvc">CVV/CVC</label>
+                                <i class="tip"></i>
+                                <div class="hint">
+                                    <span class="hint-text">3 последние цифры на обратной стороне карты</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-two">
-                        <div class="form_group col6">
-                            <input class="form_input" placeholder=" " name="YearMonth" id="YearMonth">
-                            <label for="YearMonth" class="form_label">Месяц/Год</label>
-                        </div>
-                        <div class="form_group col6">
-                            <input class="form_input" placeholder=" " name="$CVC" id="iCVC" maxlength="3" type="password" autocomplete="off" />
-                            <label for="iCVC" class="form_label">CVV/CVC</label>
-                            <i class="icon"></i>
-                        </div>
+                    <div class="checkbox">
+                        <input class="save" id="save-card" type="checkbox">
+                        <label for="save-card">Запомнить эту кару</label>
+                    </div>
+                    <div class="btn-container">
+                        <input class="btn-pay" value="Оплатить" type="button" id="buttonPayment">
                     </div>
                 </form> 
                 <form id="acs" method="post" action="">
@@ -72,19 +85,14 @@
                     <input type="hidden" id="TermUrl" name="TermUrl"/>
                 </form>
             </div>
-            <div class="checkbox">
-                <input class="save" id="save-card" type="checkbox">
-                <label for="save-card">Запомнить эту кару</label>
-            </div>
-            <div class="btn-container">
-                <input class="btn-pay" value="Оплатить" type="button" id="buttonPayment">
-            </div>
             <div id="errorBlock" style="color:red;"></div>
             <div class="countdown" id="numberCountdown">
                 <span>До окончании сессии 19:38</span>
             </div>
             <div id="infoBlock"></div>
-            <div id="indicator" style="display:none;"><img src="../../img/ajax-loader.gif" height="19" width="220" alt="indicator"></div>
+            <div id="indicator" style="display:none;">
+                <img src="../../img/ajax-loader.gif" height="19" width="220" alt="indicator">
+            </div>
         </main>
     </div>
 </body>

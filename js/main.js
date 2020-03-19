@@ -1,15 +1,26 @@
-let tip = document.querySelector('.icon');
-console.log(tip);
-$(function () {
-    $('.icon').on("click", function(e){ 
-        e = e || window.event; 
-        e.preventDefault();
-        var ypos = $(this).offset().top+24;
-        var xpos = $(this).offset().left;
-        var RealHint =  $(this).data('hint');
-        $(RealHint).css('top',ypos);
-        $(RealHint).css('left',xpos);
-        $(RealHint).toggle('fast'); 
-        return; 
-        });
+$(function($){
+    $('.cc-number').payment('formatCardNumber');
+    $('.cc-exp').payment('formatCardExpiry');
+    $('.cc-cvc').payment('formatCardCVC');
+
+    $('.tip').on('click',function() {
+        $('.tip').toggleClass('close');
+        if($(this).hasClass('close'))
+            $('.hint').css('display','block');
+        else 
+            $('.hint').css('display','none');
     });
+    $('.btn-pay').on('click', function() {
+        $('.btn-pay').css('opacity','0.6');
+    });
+    /*
+    $('.close').on('click',function() {
+        console.log('asd');
+        $('.hint').css('display','none');
+        $('.tip').removeClass('close');
+    });
+    */
+});
+
+
+
