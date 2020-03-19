@@ -132,7 +132,7 @@ html{
 .tip:after {
     content: "";
     position: absolute;
-    background-image: url(/img/icon.png);
+    background-image: url(../img/icon.png);
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -143,7 +143,7 @@ html{
     z-index: 1;
 }
 .close:after {
-    background-image: url(/img/mark.png);
+    background-image: url(../img/mark.png);
 }
 .hint {
     display: none;
@@ -193,7 +193,7 @@ html{
     vertical-align: middle;
 }
 .checkbox input[type="checkbox"]:checked + label:before {
-    background-image: url(/img/check.png);
+    background-image: url(../img/check.png);
 }
 .btn-container {
     margin: 38px 0 45px;
