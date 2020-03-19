@@ -26,17 +26,18 @@
         <div class="main">
             <form name="errorForm" action="#" method="post" id="errorForm">
                 <input type="hidden" id="language" value="<locale>" type="hidden">
+                <div class="error-img">
+                    <img src="./img/toast-order-remove.png">
+                </div>
+                <div class="error-container">
+                    <h2 class="error-caption">Ой, что-то пошло не так</h2>
+                    <span class="error-text">Недостаточно средств</span>
+                </div>
+                <div class="btn-container">
+                    <input class="btn-pay" value="Назад" type="button" id="sendPayment">
+                </div>
+                <div id="errorBlock" style="color:red;"></div>
             </form>
-            <div class="error-img">
-                <img src="./img/toast-order-remove.png">
-            </div>
-            <div class="error-container">
-                <h2 class="error-caption">Ой, что-то пошло не так</h2>
-                <span class="error-text">Недостаточно средств</span>
-            </div>
-            <div class="btn-container">
-                <input class="btn-pay" value="Назад" type="button" id="sendPayment">
-            </div>
         </div>
     </div>
 </body>
